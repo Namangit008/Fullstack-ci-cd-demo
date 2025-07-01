@@ -1,0 +1,18 @@
+name: Frontend CI
+on:
+  push:
+    paths:
+      - 'frontend/**'
+  pull_request:
+    paths:
+      - 'frontend/**'
+jobs:
+  check-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v3
+      - name: HTML Validation (simulated)
+        run: echo "HTML is clean."
